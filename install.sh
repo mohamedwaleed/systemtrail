@@ -4,10 +4,10 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  bash install.sh global [codex|cursor|claude|all]
-  bash install.sh repo /path/to/repo [codex|cursor|claude|all]
+  bash install.sh global [codex|cursor|claude|devin|all]
+  bash install.sh repo /path/to/repo [codex|cursor|claude|devin|all]
 
-Defaults to codex. Codex and Cursor share .agents/skills.
+Defaults to codex. Codex, Cursor, and Devin share .agents/skills.
 Global installs link to this checkout. Repo installs copy skill folders.
 EOF
 }
@@ -33,7 +33,7 @@ case ${1:-} in
 esac
 
 case $agent in
-  codex|cursor) destinations=("$root/.agents/skills") ;;
+  codex|cursor|devin) destinations=("$root/.agents/skills") ;;
   claude) destinations=("$root/.claude/skills") ;;
   all) destinations=("$root/.agents/skills" "$root/.claude/skills") ;;
   *) usage >&2; exit 2 ;;

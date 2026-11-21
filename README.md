@@ -23,7 +23,7 @@ SystemTrail is a small, repository-first toolkit for keeping an accurate mental 
    ```
 
    If you already have the checkout, use its existing path in the next command.
-3. Install the skills for Codex, Cursor, and Claude Code:
+3. Install the skills for Codex, Cursor, Claude Code, and Devin:
 
    ```sh
    bash "$HOME/projects/systemtrail/install.sh" global all
@@ -39,8 +39,9 @@ SystemTrail is a small, repository-first toolkit for keeping an accurate mental 
 | Codex | `~/.agents/skills/` | In the CLI or IDE extension, type `$feature-tracer`. |
 | Cursor | `~/.agents/skills/` | In Agent chat, type `/` and select `feature-tracer`. |
 | Claude Code | `~/.claude/skills/` | Type `/feature-tracer` in the session. |
+| Devin CLI | `~/.agents/skills/` | Type `/feature-tracer` in the session. |
 
-Use `global codex` or `global cursor` to install into the shared Codex and Cursor folder. Use `global claude` for Claude Code only. The installed skills link to your checkout, so keep it in place. To pick up changes from the Git server, run:
+Use `global codex`, `global cursor`, or `global devin` to install into their shared `.agents/skills/` folder. Devin CLI supports this folder for both global and repo installs ([Devin skills documentation](https://docs.devin.ai/cli/extensibility/skills/overview)). Use `global claude` for Claude Code only. The installed skills link to your checkout, so keep it in place. To pick up changes from the Git server, run:
 
 ```sh
 git -C "$HOME/projects/systemtrail" pull --ff-only
